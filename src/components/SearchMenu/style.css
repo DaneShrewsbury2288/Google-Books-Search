@@ -1,0 +1,33 @@
+.SearchMenu {
+    background-color: #2c323c;
+    background-repeat: repeat;
+    color: #fff;
+    min-height: 500px;
+}
+
+.SearchMenuWrapper {
+    border: 6px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 250px;
+}
+
+.searchMenuH1 {
+    margin: 30px 0 0 100px;
+    padding: 0;
+    text-align: left;
+}
+
+.input {
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.SearchButton {
+    float: right;
+    margin-right: 180px;
+    padding: 10px;
+}
