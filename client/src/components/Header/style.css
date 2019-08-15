@@ -1,5 +1,5 @@
 .header {
-    background-color: #2c323c;
+    background-image: url("../Images/brickbackground.jpg");
     background-repeat: repeat;
     color: #fff;
     min-height: 200px;
@@ -9,19 +9,22 @@
     display: block;
 }
 
-h1 {
-    font-size: 3.0em;
-    font-weight: bold;
-    text-align: center;
-}
-
-h2 {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.0em;
-}
-
 .headerMain {
     height: 200px;
     border: 6px solid black;
+    background-image: url("../Images/booksbackground.jpg");
 }
+
+.headerh1 {
+    font-size: 3.0em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.headerh2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.3em;
+}
+

@@ -1,32 +1,78 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import { Container } from "../components/Grid"
+import "./style.css";
 
 import Header from "../components/Header";
 import SearchMenu from "../components/SearchMenu";
 import Results from "../components/Results";
 
+
 class SearchBooks extends Component {
     state = {
         search: "",
-        books: []
+        books: [],
+        error: "",
+        message: ""
     };
 
-    componentDidMount() {
-        this.loadBooks();
-      };
 
-    loadBooks = () => {
-        API.getBooks()
-          .then(res => this.setState({ books: res.data }))
-          .catch(err => console.log(err));
-      };
+    //function to take value of what enter in the search bar
+    handleInputChange = event => {
+        this.setState({ search: event.target.value })
+    }
+
+    //function to control the submit button of the search form 
+    handleFormSubmit = event => {
+        event.preventDefault();
+        // once it clicks it connects to the google book api with the search value
+        API.getGoogleSearchBooks(this.state.search)
+            .then(res => {
+                let results = res.data.items
+                //map through the array 
+                results = results.map(result => {
+                    //store each book information in a new object 
+                    result = {
+                        key: result.id,
+                        id: result.id,
+                        title: result.volumeInfo.title,
+                        author: result.volumeInfo.authors,
+                        description: result.volumeInfo.description,
+                        image: result.volumeInfo.imageLinks.thumbnail,
+                        link: result.volumeInfo.infoLink
+                    }
+                    return result;
+                })
+                // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
+                this.setState({ books: results, error: "" })
+
+            })
+            .catch(err => this.setState({ error: err.items }));
+    };
+
+    handleSavedButton = event => {
+        event.preventDefault();
+        let savedBooks = this.state.books.filter(book => book.id === event.target.id)
+        savedBooks = savedBooks[0];
+        API.saveBook(savedBooks)
+            .then(this.setState({ message: alert("Your book is saved") }))
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
             <div>
                 <Header />
-                <SearchMenu />
-                <Results />
+                <SearchMenu
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleInputChange={this.handleInputChange}
+                />
+               <Container fluid>
+                <Results
+                    books={this.state.books}
+                    handleSavedButton={this.handleSavedButton}
+                />
+               </Container>
 
 
             </div>

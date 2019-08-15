@@ -6,7 +6,7 @@ function NoMatchTwo() {
     return (
         <div>
             <div className="jumbotron jumbotron-fluid">
-                <div className="container">
+                <div className="containerNoMatch">
                     <div className="image">
                         <img alt="vader404" src={Vader}>
 

@@ -3,11 +3,11 @@ import "./style.css";
 
 function Footer() {
     return (
-        <div className="footerContainer">
-            <header className="footer">
-                <p>App by Dane Shrewsbury</p>
-            </header>
-        </div>
+        <footer className = "page-footer">
+		<div className = "container-fluid text-center">
+			<p className="footerWord"> App by Dane Shrewsbury </p>
+		</div>	
+	</footer>
     )
 }
 

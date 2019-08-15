@@ -1,19 +1,17 @@
-.footer{
-	background-color: #36367d;
+footer{
+	background:	#36367d;
 	width: 100%;
-	position: absolute;
+	height: 40px;
 	bottom: 0;
+	text-align: center;
 	border-top: 6px solid black;
 }
 
-.footerContainer {
-	position: relative;
-}
 
-.footer p{
+
+.footerWord{
 	color: white;
-	text-align: center;
-    padding: 0;
+    padding-top: 5px;
     margin: 0;
 	font-size: 15px;
 }

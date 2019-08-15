@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import API from "../utils/API";
 
 import Header from "../components/Header";
-import Results from "../components/Results";
+import { Container } from "../components/Grid";
+import SavedResults from "../components/SavedResults";
+
 
 class SaveBooks extends Component {
     state = {
         savedBooks: []
     };
+
 
     componentDidMount() {
         API.getBooks()
@@ -15,11 +18,23 @@ class SaveBooks extends Component {
             .catch(err => console.log(err))
     }
 
+    //function to remove book by id
+    handleDeleteButton = id => {
+        API.deleteBook(id)
+            .then(res => this.componentDidMount())
+            .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <div>
                 <Header />
-                <Results />
+                <Container fluid>
+                    <SavedResults 
+                    savedBooks={this.state.savedBooks} 
+                    handleDeleteButton={this.handleDeleteButton} 
+                    />
+                </Container>
 
 
             </div>
