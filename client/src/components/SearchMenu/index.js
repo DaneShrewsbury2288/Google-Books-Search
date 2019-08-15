@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Search(props) {
+function SearchMenu(props) {
     return (
         <div className="SearchMenu">
             <div className="SearchMenuWrapper">
@@ -9,11 +9,11 @@ function Search(props) {
                 <div>
                     <input type="text" className="input" onChange={props.handleChange} placeholder="Enter Book Name..." />
                 </div>
-                <button className="SearchButton" onClick={this.props.handleInputChange}> Search </button>
+                <button className="SearchButton" onClick={props.handleInputChange}> Search </button>
             </div>
         </div>
     );
 }
 
 
-export default Search;
+export default SearchMenu;

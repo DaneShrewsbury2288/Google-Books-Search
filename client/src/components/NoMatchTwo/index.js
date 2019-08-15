@@ -1,0 +1,25 @@
+import React from "react";
+import "./style.css";
+import Vader from "./404.png"
+
+function NoMatchTwo() {
+    return (
+        <div>
+            <div className="jumbotron jumbotron-fluid">
+                <div className="container">
+                    <div className="image">
+                        <img alt="vader404" src={Vader}>
+
+                        </img>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    )
+
+}
+
+export default NoMatchTwo;

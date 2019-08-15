@@ -1,6 +1,12 @@
 .footer{
 	background-color: #36367d;
 	width: 100%;
+	position: absolute;
+	bottom: 0;
+	border-top: 6px solid black;
+}
+
+.footerContainer {
 	position: relative;
 }
 
