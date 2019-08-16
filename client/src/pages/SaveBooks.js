@@ -19,8 +19,9 @@ class SaveBooks extends Component {
     }
 
     //function to remove book by id
-    handleDeleteButton = id => {
-        API.deleteBook(id)
+    handleDeleteButton = _id => {
+        console.log(_id)
+        API.deleteBook(_id)
             .then(res => this.componentDidMount())
             .catch(err => console.log(err))
     }
