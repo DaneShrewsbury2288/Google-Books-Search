@@ -20,7 +20,7 @@ function Results(props) {
                     {props.books.map(book => {
                         return (
                         <li className="search-list list-group-item">
-                            <Row className="SearchResult row" id={book.title + "Card"} key={book.id}>
+                            <Row className="SearchResult row" id={book.id} key={book.id}>
                                 <Col size="2" className="bookImage">
                                     <img src={book.image} alt={book.title} />
                                 </Col>

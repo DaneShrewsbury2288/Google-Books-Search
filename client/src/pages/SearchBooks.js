@@ -68,22 +68,14 @@ class SearchBooks extends Component {
                     handleInputChange={this.handleInputChange}
                 />
                <Container fluid>
-                <Results
+                <Results 
                     books={this.state.books}
                     handleSavedButton={this.handleSavedButton}
                 />
                </Container>
-
-
             </div>
-
-
-
         )
     }
-
-
-
 }
 
 export default SearchBooks;
