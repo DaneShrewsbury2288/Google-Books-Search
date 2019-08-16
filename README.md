@@ -2,7 +2,7 @@
 
 This app allows the user to search for books (by name) using the google API. The books can then be saved using mongoDb and the saved books can be seen using the Saved tab. This project uses React-Router to navigate between the multiple pages. 
 
-Deployed: https://immense-basin-59334.herokuapp.com/
+Demo: https://immense-basin-59334.herokuapp.com/
 
 ## Getting Started
 
@@ -20,12 +20,14 @@ You will have the option to view the book further on a website or save the book 
 
 You can view your saved books by clicking the "saved" in the NavBar. 
 
+The books can also be deleted in your "saved" tab by clicking the delete button. 
 
 
 ## Deployment
 
-https://immense-basin-59334.herokuapp.com/
+This app is deployed via a heroku server. 
 
+https://immense-basin-59334.herokuapp.com/
 
 
 ## Built With
@@ -41,7 +43,5 @@ https://immense-basin-59334.herokuapp.com/
 * Axios
 
 ## Authors
-
-* Dane Shrewsbury
 
 * **Dane Shrewsbury** - 2019
