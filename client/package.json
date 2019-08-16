@@ -2,6 +2,7 @@
   "name": "booksearch",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://immense-basin-59334.herokuapp.com/",
   "engines": {
     "node": "10.3.0"
   },

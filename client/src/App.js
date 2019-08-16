@@ -13,7 +13,7 @@ import NoMatch from "./pages/NoMatch";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div>
         <Navbar />
         <Switch >
           <Route exact path="/" component={SearchBooks} />
