@@ -1,19 +1,18 @@
-import React, { Component } from "react";
-import API from "../utils/API";
-import { Container } from "../components/Grid"
-import "./style.css";
-
-import Header from "../components/Header";
-import SearchMenu from "../components/SearchMenu";
-import Results from "../components/Results";
+import React, { Component } from 'react';
+import API from '../utils/API';
+import { Container } from '../components/Grid'
+import './style.css';
+import Header from '../components/Header';
+import SearchMenu from '../components/SearchMenu';
+import Results from '../components/Results';
 
 
 class SearchBooks extends Component {
     state = {
-        search: "",
+        search: '',
         books: [],
-        error: "",
-        message: ""
+        error: '',
+        message: ''
     };
 
 
@@ -44,7 +43,7 @@ class SearchBooks extends Component {
                     return result;
                 })
                 // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
-                this.setState({ books: results, error: "" })
+                this.setState({ books: results, error: '' })
 
             })
             .catch(err => this.setState({ error: err.items }));
@@ -56,7 +55,7 @@ class SearchBooks extends Component {
         let savedBooks = this.state.books.filter(book => book.id === event.target.id)
         savedBooks = savedBooks[0];
         API.saveBook(savedBooks)
-            .then(this.setState({ message: alert("Your book is saved") }))
+            .then(this.setState({ message: alert('Your book is saved') }))
             .catch(err => console.log(err))
     }
 
@@ -68,12 +67,12 @@ class SearchBooks extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
                 />
-               <Container fluid>
-                <Results 
-                    books={this.state.books}
-                    handleSavedButton={this.handleSavedButton}
-                />
-               </Container>
+                <Container fluid>
+                    <Results
+                        books={this.state.books}
+                        handleSavedButton={this.handleSavedButton}
+                    />
+                </Container>
             </div>
         )
     }
