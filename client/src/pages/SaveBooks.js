@@ -30,22 +30,14 @@ class SaveBooks extends Component {
             <div>
                 <Header />
                 <Container fluid>
-                    <SavedResults 
-                    savedBooks={this.state.savedBooks} 
-                    handleDeleteButton={this.handleDeleteButton} 
+                    <SavedResults
+                        savedBooks={this.state.savedBooks}
+                        handleDeleteButton={this.handleDeleteButton}
                     />
                 </Container>
-
-
             </div>
-
-
-
         )
     }
-
-
-
 }
 
 export default SaveBooks;
